@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from 'react-dom';
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
+import './style.css'
 
 const myTodoList = [
   {
@@ -51,8 +52,8 @@ class App extends React.Component {
 
     const newTodo = {
       name: todo,
-      id: Date.now,
-      completed: false
+      id: Date.now(),
+      completed: false,
     };
 
     this.setState({
@@ -61,17 +62,19 @@ class App extends React.Component {
     });
   }
 
-handleToggleTodo = (todo) =>{
+
+handleToggleTodo = (todo)=> {
   this.setState({
     ...this.state,
-    myTodoList: this.state.myTodoList.map(item =>{
-      if(item.id ===todo.id){
-        return {...item, completed: !item.completed}
-      } else{
-        return item;
+    myTodoList: this.state.myTodoList.map(t => {
+      if (t.id === todo.id) {
+        return {...t, completed: !t.completed}
+      } else {
+        return t;
       }
     })
   })
+  console.log(todo)
 }
 
   // you will need a place to store your state in this component.
