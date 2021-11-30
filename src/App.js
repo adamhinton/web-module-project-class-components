@@ -90,8 +90,6 @@ handleToggleTodo = (todo)=> {
         <TodoList handleToggleTodo = {this.handleToggleTodo} myTodoList={this.state.myTodoList}/>
         <button onClick={this.handleToggle}>Clear Completed</button>
       </div>
-
-
     );
   }
 }
